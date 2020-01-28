@@ -34,7 +34,7 @@ class RegionBranchStoreUrlJson implements RegionBranchStore
      * @inheritDoc
      * @return RegionBranch[]
      */
-    public function findAll(): ?array
+    public function findAll(): array
     {
         if($this->all){
             return $this->all;
@@ -43,16 +43,16 @@ class RegionBranchStoreUrlJson implements RegionBranchStore
 
         $resource=file_get_contents($this->url->__toString());
         if(empty($resource)){
-            return null;
+            return [];
         }
 
         try{
             $resource=json_decode($resource,true);
             if(!$resource){
-                return null;
+                return [];
             }
         }catch (\Exception $e){
-            return null;
+            return [];
         }
         foreach ($resource as $item){
             $this->all[]=new RegionBranch(

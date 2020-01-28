@@ -31,6 +31,7 @@ class Api
     /**
      * @param Request $request
      * @return CurlResponse
+     * @throws \Exception
      */
     public function sendRequest(Request $request): CurlResponse
     {
@@ -39,14 +40,21 @@ class Api
 
     public function innCheck(InnValue $inn): CurlResponse
     {
-        return $this->send($this->urlCheckInn,http_build_query(['companyinn'=>$inn->getInn()]));
+        return $this->send($this->urlCheckInn, http_build_query(['companyinn' => $inn->getInn()]));
     }
 
+    /**
+     * @param $url
+     * @param string|null $data
+     * @param string $method
+     * @return CurlResponse
+     * @throws \Exception
+     */
     private function send($url, string $data = null, string $method = 'POST'): CurlResponse
     {
         $curl = curl_init();
 
-        if(!$curl){
+        if (!$curl) {
             throw new \Exception('Curl not initialize');
         }
 
@@ -75,10 +83,13 @@ class Api
             $res = new CurlResponse(curl_getinfo($curl, CURLINFO_HTTP_CODE),
                 mb_substr($response, 0, $headers_size, 'utf-8'),
                 mb_substr($response, $headers_size, null, 'utf-8'));
+
+            return $res;
+        } catch (\Exception $e) {
+            throw $e;
         } finally {
             curl_close($curl);
         }
 
-        return $res;
     }
 }
