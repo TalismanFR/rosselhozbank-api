@@ -149,7 +149,7 @@ class Request
         $this->agreement = $agreement;
     }
 
-    public static function simpleCreate(int $partnerId, InnValue $innValue, string $companyName, string $clientFio,
+    public static function simpleCreate(int $partnerId,string $partnerName, InnValue $innValue, string $companyName, string $clientFio,
                                         PhoneValue $phoneValue, ?string $email, RegionBranch $regionBranch,?string $comment): self
     {
         $fio=explode(' ',$clientFio);
@@ -180,7 +180,7 @@ class Request
             $clientFio,
             self::DEFAULT_SERVICE_TYPES,
             $regionBranch,
-            '',
+            $partnerName,
             true
         );
     }

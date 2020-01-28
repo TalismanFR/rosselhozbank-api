@@ -45,7 +45,7 @@ class ApiTest extends TestCase
 
     public function testSimpleCreate()
     {
-        $request=Request::simpleCreate(12345678,new InnValue('701771570807'),'ООО РОГА И КОПЫТА',
+        $request=Request::simpleCreate(12345678, 'ООО ТЕСТОВАЯ МЯСОРУБКА',new InnValue('701771570807'),'ООО РОГА И КОПЫТА',
             'Петров Владислав Юсупович',new PhoneValue('+79675319122'),null,
             new RegionBranch(1674,'Санкт-Петербургский филиал','Санкт-Петербург'),
             'comment');
