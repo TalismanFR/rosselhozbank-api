@@ -1,5 +1,8 @@
 Библиотека для работы с API Россельхозбанка по передачи лидов на рко.
 ===
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/TalismanFR/rosselhozbank-api/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/TalismanFR/rosselhozbank-api/badges/quality-score.png?b=master)
+[![Build Status](https://scrutinizer-ci.com/g/TalismanFR/rosselhozbank-api/badges/build.png?b=master)](https://scrutinizer-ci.com/g/TalismanFR/rosselhozbank-api/build-status/master)
+[![Code Intelligence Status](https://scrutinizer-ci.com/g/TalismanFR/rosselhozbank-api/badges/code-intelligence.svg?b=master)](https://scrutinizer-ci.com/code-intelligence)
 
 По сути это веб [страница](https://www.rshb.ru/promo/smb/rko-partner/).
 
@@ -8,7 +11,7 @@
 ## Использование
 Сама форма отправляет много параметров, но многие из них константные или не обязательыне.
 
-###Быстрый старт:
+### Быстрый старт:
 ```php
 //формируем объект запроса
 /**
@@ -68,3 +71,6 @@ foreach ($all as $branch){
 }
 ```
 В своем DI контейнеры может подменить реализацию на что-то своё и брать из базы или кэша.
+
+## Тесты
+В наличии.

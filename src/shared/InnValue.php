@@ -57,21 +57,20 @@ class InnValue
                 case 10:
                     $n10 = $check_digit($inn, [2, 4, 10, 3, 5, 9, 4, 6, 8]);
                     if ($n10 === (int) $inn{9}) {
-                        $result = true;
+                        return true;
                     }
                     break;
                 case 12:
                     $n11 = $check_digit($inn, [7, 2, 4, 10, 3, 5, 9, 4, 6, 8]);
                     $n12 = $check_digit($inn, [3, 7, 2, 4, 10, 3, 5, 9, 4, 6, 8]);
                     if (($n11 === (int) $inn{10}) && ($n12 === (int) $inn{11})) {
-                        $result = true;
+                        return true;
                     }
                     break;
             }
         }
 
-        return $result;
+        return false;
     }
-
 
 }

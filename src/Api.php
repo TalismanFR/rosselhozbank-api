@@ -46,6 +46,10 @@ class Api
     {
         $curl = curl_init();
 
+        if(!$curl){
+            throw new \Exception('Curl not initialize');
+        }
+
         try {
             curl_setopt_array($curl, [
                 CURLOPT_URL => $url,
