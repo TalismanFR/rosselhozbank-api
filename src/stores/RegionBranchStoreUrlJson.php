@@ -21,7 +21,7 @@ class RegionBranchStoreUrlJson implements RegionBranchStore
      * RegionBranchStoreUrlJson constructor.
      * @param $url
      */
-    public function __construct(?UrlValue $url)
+    public function __construct(?UrlValue $url=null)
     {
         $this->url = $url;
         if(empty($this->url)){
