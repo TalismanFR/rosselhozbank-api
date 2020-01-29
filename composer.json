@@ -4,7 +4,7 @@
   "type": "library",
   "keywords": ["rosselhozbank","api"],
   "license": "MIT",
-  "version": "0.0.5",
+  "version": "1.0.0",
   "authors": [
     {
       "name": "Anatoliy Egorov",
