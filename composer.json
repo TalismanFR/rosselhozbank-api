@@ -1,10 +1,11 @@
 {
   "name": "talismanfr/rosselhozbank-api",
-  "description": "Library for working with IPA Bank. Used bank web page.",
+  "description": "Library for working with API Bank. Used bank web page.",
   "type": "library",
   "keywords": ["rosselhozbank","api"],
   "license": "MIT",
-  "version": "1.0.0",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
   "authors": [
     {
       "name": "Anatoliy Egorov",
